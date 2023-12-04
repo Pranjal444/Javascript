@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Event</title>
+</head>
+<body>
+   <input type="text" id="myInput"  onchange="showInputValue()"> 
+</body>
+<script>
+    function showInputValue(){
+        var inputvalue=document.getElementById('myInput').value;
+        alert('Input Value'+inputvalue);
+    }
+</script>
+</html>
