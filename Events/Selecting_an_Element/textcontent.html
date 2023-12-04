@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Content</title>
+</head>
+<body>
+    <h1 id="demo">JavaScript</h1>
+  <button onclick="changeText()">Change to Masai</button> 
+  <button onclick="changeOriginal()">Change to Javascript</button> 
+</body>
+<script>
+  // You can only see the "plain text" treasures - the shiny words on the coins, the scribbles on the map. No fancy boxes or decorations, just the raw information, similar to the text inside an element with all the HTML markup stripped away.
+     function changeText(){
+  document.getElementById("demo").textContent = "MASAI SCHOOL";
+}
+
+function changeOriginal(){
+  document.getElementById("demo").textContent = "JavaScript";
+}
+</script>
+</html>
