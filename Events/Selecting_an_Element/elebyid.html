@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element By Id</title>
+</head>
+<body>
+    <!-- The Document method getElementById() returns an Element object representing the element whose 
+        id property matches the specified string. Since element IDs are required to be unique if specified,
+         they're a useful way to get access to a specific element quickly.
+ -->
+ <ul>
+    <li>list 1</li>
+    <li id="list2">list 2</li>
+    <li>list 3</li>
+</ul>
+<script>
+    let element=document.getElementById("list2");
+    console.log(element);
+</script>
+</body>
+</html>
