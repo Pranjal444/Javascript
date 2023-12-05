@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic table</title>
+</head>
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    h1{
+        text-align: center;
+        margin: auto;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid black;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: lightblue;
+    }
+    input{
+        background-color: lightcyan;
+        height: 20px;
+    }
+    .material-symbols-outlined {
+        background-color: white;
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+    }
+</style>
+
+<body>
+    <h1>Dynamic table(DOM)</h1><hr>
+    <table id="dynamic-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Project Name</th>
+                <th>Responsive</th>
+                <th>Language</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" name="name[]"></td>
+                <td><input type="text" name="pname[]"></td>
+                <td><input type="text" name="responsive[]"></td>
+                <td><input type="text" name="language[]"></td>
+                <td>
+                    <button onclick="removeRow(this)">
+                        <span class="material-symbols-outlined">Remove</span>
+                    </button>
+                    <button onclick="addRow()">
+                        <span class="material-symbols-outlined">Add</span>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function addRow() {
+            var table = document.getElementById('dynamic-table').getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.rows.length);
+
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+            var cell5 = newRow.insertCell(4);
+
+            cell1.innerHTML = '<input type="text" name="name[]">';
+            cell2.innerHTML = '<input type="text" name="pname[]">';
+            cell3.innerHTML = '<input type="text" name="responsive[]">';
+            cell4.innerHTML = '<input type="text" name="language[]">';
+            cell5.innerHTML =
+                '<button onclick="removeRow(this)"><span class="material-symbols-outlined">Remove</span></button>' +
+                '<button onclick="addRow()"><span class="material-symbols-outlined">Add</span></button>';
+        }
+
+        function removeRow(btn) {
+            var row = btn.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+    </script>
+</body>
+
+</html>
