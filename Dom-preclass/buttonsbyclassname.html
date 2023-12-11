@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+    button{
+        width: 400px;
+        background-color: black;
+        color: white;
+        padding: 1em;
+        margin: 0 5em 0;
+    }
+</style>
+<body>
+    <h1>Buttons Example</h1>
+    <div>
+        <button class="green undo" onclick="green()">Click to change to green Color</button>
+        <button class="red  undo" onclick="red()">Click to change to red Color</button>
+        <button class="blue  undo" onclick="blue()">Click to change to blue Color</button>
+        <button class="undo  undo" onclick="undo()">Click to undo all the Colors</button>
+</div>
+<script>
+    function green(){
+        document.getElementsByClassName('green')[0].style.backgroundColor='green';
+    }
+    function red(){
+        document.getElementsByClassName('red')[0].style.backgroundColor='red';
+    }
+    function blue(){
+        document.getElementsByClassName('blue')[0].style.backgroundColor='blue';
+    }
+    function undo(){
+        let buttons=document.getElementsByClassName('undo');
+        for(let i=0;i<buttons.length;i++){
+            buttons[i].style.backgroundColor='black';
+        }
+    }
+</script>
+</body>
+</html>
